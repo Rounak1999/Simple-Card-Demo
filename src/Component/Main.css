@@ -7,12 +7,13 @@
     overflow-x: hidden;
 }
 
-.main-wrapper {
-    margin-top: 50px;
+.logo {
+    width: 110px;
+    height: 70px;
+    /* animation: myAnim 1s ease 0s 1 normal forwards; */
 }
 
 .item-container {
-    background-color: #000;
     border: 1px solid #fff;
     width: 250px;
     height: 250px;
@@ -20,7 +21,30 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    border: none;
 }
+
+.item-container-grass {
+    background: #00bf8f;
+    background: -webkit-linear-gradient(to bottom, #00bf8f, #001510);
+    background: linear-gradient(to bottom, #00bf8f, #001510);
+}
+
+.item-container-fire {
+    background: #000000;
+    background: -webkit-linear-gradient(to bottom, #e74c3c, #000000);
+    background: linear-gradient(to bottom, #e74c3c, #000000);
+}
+
+.item-container-water {
+    background: #2b5876; 
+    background: -webkit-linear-gradient(to bottom, #4e4376, #2b5876);  
+    background: linear-gradient(to bottom, #4e4376, #051520); 
+}
+
+
 
 .item-container:hover {
     width: 300px;
@@ -28,15 +52,14 @@
 }
 
 .image-container {
-    position: relative;
-    bottom: 10px;
+    position: absolute;
 }
 
 .image-body {
     position: absolute;
-    animation: myAnim 1s ease 0s 1 normal forwards;
     width: 150px;
     height: 150px;
+    animation: myAnim 1s ease 0s 1 normal forwards;
     transition: width 2s, height 2s, transform 2s;
 }
 
@@ -58,14 +81,40 @@
     }
 }
 
-.button-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: -100px;
+.button-body {
+    width: 30px;
+    height: 30px;
 }
 
-.button-body {
-    width: 60px;
-    height: 60px;
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+.top-left {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.midd {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
 }
