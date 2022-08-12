@@ -10,7 +10,37 @@
 .logo {
     width: 110px;
     height: 70px;
-    /* animation: myAnim 1s ease 0s 1 normal forwards; */
+}
+
+.loader {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 1;
+    animation: rotation 1s infinite linear;
+}
+
+.no-data {
+    left: 50%;
+    top: 45%;
+    transform: translate(-45%, -50%);
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    z-index: 1;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
 }
 
 .item-container {
@@ -137,6 +167,7 @@
     position: absolute;
     bottom: 8px;
     left: 16px;
+    color: #fff;
 }
 
 .top-left {
@@ -144,12 +175,14 @@
     top: -80px;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: #fff;
 }
 
 .bottom-right {
     position: absolute;
     bottom: 8px;
     right: 16px;
+    color: #fff;
 }
 
 .centered {
@@ -157,6 +190,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: #fff;
+    opacity: 0.3;
+    text-align: center;
+}
+
+.centered .centered-text {
+    font-size: 80px;
 }
 
 .midd {

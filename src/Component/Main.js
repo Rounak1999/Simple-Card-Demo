@@ -8,13 +8,14 @@ import axios from "axios";
 function Main() {
 
     const [cardData, setCardData] = useState([]);
-    const [allCardData, setAllCardData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         getAllData()
     }, []);
 
     const getAllData = () => {
+        setIsLoading(true)
         axios
             .get("https://62f38b87a84d8c9681261221.mockapi.io/pokemon-data/getCard")
             .then((res) => {
@@ -22,76 +23,122 @@ function Main() {
                     return item.show == true
                 })
                 setCardData(dataArray)
-                setAllCardData(res.data)
+                setIsLoading(false)
             })
             .catch((err) => {
                 console.log("err", err)
+                setIsLoading(false)
             })
     };
     const deleteData = (id) => {
+        setIsLoading(true)
         axios
             .put(`https://62f38b87a84d8c9681261221.mockapi.io/pokemon-data/getCard/${id}`, { show: false })
             .then((res) => {
                 getAllData()
+                setIsLoading(false)
             })
             .catch((err) => {
                 console.log("err", err)
+                setIsLoading(false)
             })
     };
 
     const postData = () => {
-        for (var i = allCardData.length - 1; i >= 0; i--) {
-            console.log("carddata",allCardData[i]);
+        setIsLoading(true)
+        console.log(cardData.length)
+        if (cardData.length == 0) {
+            axios
+                .put(`https://62f38b87a84d8c9681261221.mockapi.io/pokemon-data/getCard/${'001'}`, { show: true })
+                .then((res) => {
+                    console.log("res", res.data)
+                    getAllData()
+                    setIsLoading(false)
+                })
+                .catch((err) => {
+                    console.log("err", err)
+                    setIsLoading(false)
+                })
         }
-        // axios
-        //     .post(`https://62f38b87a84d8c9681261221.mockapi.io/pokemon-data/getCard/${id}`, { show: false })
-        //     .then((res) => {
-        //         console.log("res", res.data)
-        //         getAllData()
-        //     })
-        //     .catch((err) => {
-        //         console.log("err", err)
-        //     })
+        else {
+            let i = cardData.length
+            let j = cardData[i - 1]
+            let id = parseInt(j.id) + 1
+            axios
+                .put(`https://62f38b87a84d8c9681261221.mockapi.io/pokemon-data/getCard/${'00' + id}`, { show: true })
+                .then((res) => {
+                    console.log("res", res.data)
+                    getAllData()
+                    setIsLoading(false)
+                })
+                .catch((err) => {
+                    console.log("err", err)
+                    setIsLoading(false)
+                })
+        }
     };
 
     return (
-        <Grid container spacing={2} style={{}}>
+        <Grid container spacing={2}>
+
             <Grid item xs={12} sm={12} md={12}
+                className={"card-header"}
                 style={{ display: "flex", justifyContent: "space-between", alignItems: "center", color: "#fff", position: "fixed", width: "100%", zIndex: "12", paddingInline: "50px", paddingTop: "40px" }}>
+
                 <div>
                     <img src={require('../assets/pokemon.png')} className="logo" />
                 </div>
+
                 <div>
-                    <Button variant='contained' color='success' onClick={()=>{postData()}}>Add Pokemon</Button>
+                    <Button variant='contained' color='success' onClick={() => { postData() }}>Add Pokemon</Button>
                 </div>
+
             </Grid>
-            <Grid container spacing={2} style={{ margin: "auto", marginTop: "100px", width: "80%" }}>
+            {isLoading ?
+                <div><img src={require('../assets/close.png')} className="loader" /></div>
+                : null
+            }
+            <Grid container spacing={2}
+                style={{ margin: "auto", marginTop: "100px", width: "80%" }}>
+                {
+                    cardData.length == 0 ?
+                        <div  className='no-data'>Please Click On Add Pokemon Button</div> : null
+                }
                 {
                     cardData.map((data) => {
                         return (
+
                             <Grid item xs={12} sm={6} md={4}
                                 style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "350px", height: "350px" }}
                             >
+
                                 <div className={`item-container-${data.type} item-container`}>
-                                    <div className="bottom-left" style={{ color: "#fff" }}>
-                                        <img src={require('../assets/close.png')} className="button-body" />
-                                    </div>
-                                    <div className="top-left" style={{ color: "#fff" }}>
+
+                                    <div className="top-left">
                                         <div className="image-container">
                                             <img src={require(`../assets/${data.image}.png`)} className="image-body" />
                                         </div>
                                     </div>
+
                                     <div className="midd" onClick={() => { deleteData(data.id) }}>
                                         <Button style={{ color: "#fff" }}><DeleteIcon /></Button>
                                     </div>
-                                    <div className="bottom-right" style={{ color: "#fff" }}>
-                                        <img src={require('../assets/open.png')} className="button-body" />
-                                    </div>
-                                    <div className="centered" style={{ color: "#fff", opacity: "0.3", textAlign: "center" }}>
-                                        <div style={{ fontSize: "80px" }}>{data.id}</div>
+
+                                    <div className="centered">
+                                        <div className='centered-text'>{data.id}</div>
                                         <div>{(data.type).toUpperCase() + " " + "TYPE"}</div>
                                     </div>
+
+                                    <div className="bottom-left">
+                                        <img src={require('../assets/close.png')} className="button-body" />
+                                    </div>
+
+                                    <div className="bottom-right">
+                                        <img src={require('../assets/open.png')} className="button-body" />
+                                    </div>
+
                                 </div>
+
                             </Grid>
                         );
                     })
