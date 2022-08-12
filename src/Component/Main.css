@@ -39,11 +39,58 @@
 }
 
 .item-container-water {
-    background: #2b5876; 
-    background: -webkit-linear-gradient(to bottom, #4e4376, #2b5876);  
-    background: linear-gradient(to bottom, #4e4376, #051520); 
+    background: #2b5876;
+    background: -webkit-linear-gradient(to bottom, #4e4376, #2b5876);
+    background: linear-gradient(to bottom, #4e4376, #051520);
 }
 
+.item-container-poison {
+    background: #AA076B;
+    background: -webkit-linear-gradient(to bottom, #61045F, #AA076B);
+    background: linear-gradient(to bottom, #61045F, #AA076B);
+}
+
+.item-container-normal {
+    background: #603813;
+    background: -webkit-linear-gradient(to top, #603813, #b29f94);
+    background: linear-gradient(to top, #603813, #b29f94);
+}
+
+.item-container-wind {
+    background: #314755;
+    background: -webkit-linear-gradient(to top, #314755, #26a0da);
+    background: linear-gradient(to top, #314755, #26a0da);
+}
+
+.item-container-rock {
+    background: #536976;
+    background: -webkit-linear-gradient(to top, #536976, #BBD2C5);
+    background: linear-gradient(to top, #536976, #BBD2C5);
+}
+
+.item-container-psychic {
+    background: #636363;
+    background: -webkit-linear-gradient(to top, #636363, #a2ab58);
+    background: linear-gradient(to top, #636363, #a2ab58);
+}
+
+.item-container-dragon {
+    background: #200122;
+    background: -webkit-linear-gradient(to bottom, #6f0000, #200122);
+    background: linear-gradient(to bottom, #6f0000, #200122);
+}
+
+.item-container-special {
+    background: #093637;
+    background: -webkit-linear-gradient(to bottom, #44A08D, #093637);
+    background: linear-gradient(to bottom, #44A08D, #093637);
+}
+
+.item-container-electric {
+    background: #BA8B02;
+    background: -webkit-linear-gradient(to bottom, #181818, #BA8B02);
+    background: linear-gradient(to bottom, #181818, #BA8B02);
+}
 
 
 .item-container:hover {

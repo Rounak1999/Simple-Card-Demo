@@ -8,114 +8,50 @@ import axios from "axios";
 function Main() {
 
     const [cardData, setCardData] = useState([]);
+    const [allCardData, setAllCardData] = useState([]);
 
     useEffect(() => {
-        handleData()
-    },[]);
+        getAllData()
+    }, []);
 
-    let Data = [
-        {
-            "id": "001",
-            "image": "001",
-            "type": "grass"
-        },
-        {
-            "id": "002",
-            "image": "002",
-            "type": "grass"
-        },
-        {
-            "id": "003",
-            "image": "003",
-            "type": "grass"
-        },
-        {
-            "id": "004",
-            "image": "004",
-            "type": "fire"
-        },
-        {
-            "id": "005",
-            "image": "005",
-            "type": "fire"
-        },
-        {
-            "id": "006",
-            "image": "006",
-            "type": "fire"
-        },
-        {
-            "id": "007",
-            "image": "007",
-            "type": "water"
-        },
-        {
-            "id": "008",
-            "image": "008",
-            "type": "water"
-        },
-        {
-            "id": "009",
-            "image": "009",
-            "type": "water"
-        },
-        {
-            "id": "010",
-            "image": "010",
-            "type": "poison"
-        },
-        {
-            "id": "011",
-            "image": "011",
-            "type": "poison"
-        },
-        {
-            "id": "012",
-            "image": "012",
-            "type": "poison"
-        },
-        {
-            "id": "013",
-            "image": "013",
-            "type": "poison"
-        },
-        {
-            "id": "014",
-            "image": "014",
-            "type": "poison"
-        },
-        {
-            "id": "015",
-            "image": "015",
-            "type": "poison"
-        },
-        {
-            "id": "016",
-            "image": "016",
-            "type": "special"
-        },
-        {
-            "id": "017",
-            "image": "017",
-            "type": "special"
-        },
-        {
-            "id": "018",
-            "image": "018",
-            "type": "special"
-        }
-    ];
-
-    const handleData = () => {
+    const getAllData = () => {
         axios
             .get("https://62f38b87a84d8c9681261221.mockapi.io/pokemon-data/getCard")
-            .then((res) => { 
-                console.log("res", res.data)
-                setCardData(res.data)
-             })
-            .catch((err) => { 
+            .then((res) => {
+                let dataArray = res.data.filter((item) => {
+                    return item.show == true
+                })
+                setCardData(dataArray)
+                setAllCardData(res.data)
+            })
+            .catch((err) => {
                 console.log("err", err)
-             })
+            })
+    };
+    const deleteData = (id) => {
+        axios
+            .put(`https://62f38b87a84d8c9681261221.mockapi.io/pokemon-data/getCard/${id}`, { show: false })
+            .then((res) => {
+                getAllData()
+            })
+            .catch((err) => {
+                console.log("err", err)
+            })
+    };
+
+    const postData = () => {
+        for (var i = allCardData.length - 1; i >= 0; i--) {
+            console.log("carddata",allCardData[i]);
+        }
+        // axios
+        //     .post(`https://62f38b87a84d8c9681261221.mockapi.io/pokemon-data/getCard/${id}`, { show: false })
+        //     .then((res) => {
+        //         console.log("res", res.data)
+        //         getAllData()
+        //     })
+        //     .catch((err) => {
+        //         console.log("err", err)
+        //     })
     };
 
     return (
@@ -126,7 +62,7 @@ function Main() {
                     <img src={require('../assets/pokemon.png')} className="logo" />
                 </div>
                 <div>
-                    <Button variant='contained' color='success'>Add Pokemon</Button>
+                    <Button variant='contained' color='success' onClick={()=>{postData()}}>Add Pokemon</Button>
                 </div>
             </Grid>
             <Grid container spacing={2} style={{ margin: "auto", marginTop: "100px", width: "80%" }}>
@@ -136,7 +72,7 @@ function Main() {
                             <Grid item xs={12} sm={6} md={4}
                                 style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "350px", height: "350px" }}
                             >
-                                <div className={`${data.type === "grass" ? "item-container-grass" : data.type === "fire" ? "item-container-fire" : data.type === "water" ? "item-container-water" : ""} item-container`}>
+                                <div className={`item-container-${data.type} item-container`}>
                                     <div className="bottom-left" style={{ color: "#fff" }}>
                                         <img src={require('../assets/close.png')} className="button-body" />
                                     </div>
@@ -145,7 +81,7 @@ function Main() {
                                             <img src={require(`../assets/${data.image}.png`)} className="image-body" />
                                         </div>
                                     </div>
-                                    <div className="midd">
+                                    <div className="midd" onClick={() => { deleteData(data.id) }}>
                                         <Button style={{ color: "#fff" }}><DeleteIcon /></Button>
                                     </div>
                                     <div className="bottom-right" style={{ color: "#fff" }}>
