@@ -49,7 +49,7 @@ function Main() {
         console.log(cardData.length)
         if (cardData.length == 0) {
             axios
-                .put(`https://62f38b87a84d8c9681261221.mockapi.io/pokemon-data/getCard/${'001'}`, { show: true })
+                .put(`https://62f38b87a84d8c9681261221.mockapi.io/pokemon-data/getCard/${1}`, { show: true })
                 .then((res) => {
                     console.log("res", res.data)
                     getAllData()
@@ -65,7 +65,7 @@ function Main() {
             let j = cardData[i - 1]
             let id = parseInt(j.id) + 1
             axios
-                .put(`https://62f38b87a84d8c9681261221.mockapi.io/pokemon-data/getCard/${'00' + id}`, { show: true })
+                .put(`https://62f38b87a84d8c9681261221.mockapi.io/pokemon-data/getCard/${id}`, { show: true })
                 .then((res) => {
                     console.log("res", res.data)
                     getAllData()
@@ -125,7 +125,7 @@ function Main() {
                                     </div>
 
                                     <div className="centered">
-                                        <div className='centered-text'>{data.id}</div>
+                                        <div className='centered-text'>{data.pokemon_no}</div>
                                         <div>{(data.type).toUpperCase() + " " + "TYPE"}</div>
                                     </div>
 

@@ -1,300 +1,350 @@
 let data = [
     {
-        "id": "001",
+        "id":"1",
+        "pokemon_no": "001",
         "image": "001",
         "type": "grass",
         "show": true
     },
     {
-        "id": "002",
+        "id":"2",
+        "pokemon_no": "002",
         "image": "002",
         "type": "grass",
         "show": true
     },
     {
-        "id": "003",
+        "id":"3",
+        "pokemon_no": "003",
         "image": "003",
         "type": "grass",
         "show": true
     },
     {
-        "id": "004",
+        "id":"4",
+        "pokemon_no": "004",
         "image": "004",
         "type": "fire",
         "show": false
     },
     {
-        "id": "005",
+        "id":"5",
+        "pokemon_no": "005",
         "image": "005",
         "type": "fire",
         "show": false
     },
     {
-        "id": "006",
+        "id":"6",
+        "pokemon_no": "006",
         "image": "006",
         "type": "fire",
         "show": false
     },
     {
-        "id": "007",
+        "id":"7",
+        "pokemon_no": "007",
         "image": "007",
         "type": "water",
         "show": false
     },
     {
-        "id": "008",
+        "id":"8",
+        "pokemon_no": "008",
         "image": "008",
         "type": "water",
         "show": false
     },
     {
-        "id": "009",
+        "id":"9",
+        "pokemon_no": "009",
         "image": "009",
         "type": "water",
         "show": false
     },
     {
-        "id": "010",
+        "id":"10",
+        "pokemon_no": "010",
         "image": "010",
         "type": "poison",
         "show": false
     },
     {
-        "id": "011",
+        "id":"11",
+        "pokemon_no": "011",
         "image": "011",
         "type": "poison",
         "show": false
     },
     {
-        "id": "012",
+        "id":"12",
+        "pokemon_no": "012",
         "image": "012",
         "type": "poison",
         "show": false
     },
     {
-        "id": "013",
+        "id":"13",
+        "pokemon_no": "013",
         "image": "013",
         "type": "electric",
         "show": false
     },
     {
-        "id": "014",
+        "id":"14",
+        "pokemon_no": "014",
         "image": "014",
         "type": "electric",
         "show": false
     },
     {
-        "id": "015",
+        "id":"15",
+        "pokemon_no": "015",
         "image": "015",
         "type": "electric",
         "show": false
     },
     {
-        "id": "016",
+        "id":"16",
+        "pokemon_no": "016",
         "image": "016",
         "type": "special",
         "show": false
     },
     {
-        "id": "017",
+        "id":"17",
+        "pokemon_no": "017",
         "image": "017",
         "type": "special",
         "show": false
     },
     {
-        "id": "018",
+        "id":"18",
+        "pokemon_no": "018",
         "image": "018",
         "type": "special",
         "show": false
     },
     {
-        "id": "019",
+        "id":"19",
+        "pokemon_no": "019",
         "image": "019",
         "type": "psychic",
         "show": false
     },
     {
-        "id": "020",
+        "id":"20",
+        "pokemon_no": "020",
         "image": "020",
         "type": "psychic",
         "show": false
     },
     {
-        "id": "021",
+        "id":"21",
+        "pokemon_no": "021",
         "image": "021",
         "type": "psychic",
         "show": false
     },
     {
-        "id": "022",
+        "id":"22",
+        "pokemon_no": "022",
         "image": "022",
         "type": "ghost",
         "show": false
     },
     {
-        "id": "023",
+        "id":"23",
+        "pokemon_no": "023",
         "image": "023",
         "type": "ghost",
         "show": false
     },
     {
-        "id": "024",
+        "id":"24",
+        "pokemon_no": "024",
         "image": "024",
         "type": "ghost",
         "show": false
     },
     {
-        "id": "025",
+        "id":"25",
+        "pokemon_no": "025",
         "image": "025",
         "type": "rock",
         "show": false
     },
     {
-        "id": "026",
+        "id":"26",
+        "pokemon_no": "026",
         "image": "026",
         "type": "rock",
         "show": false
     },
     {
-        "id": "027",
+        "id":"27",
+        "pokemon_no": "027",
         "image": "027",
         "type": "rock",
         "show": false
     },
     {
-        "id": "028",
+        "id":"28",
+        "pokemon_no": "028",
         "image": "028",
         "type": "wind",
         "show": false
     },
     {
-        "id": "029",
+        "id":"29",
+        "pokemon_no": "029",
         "image": "029",
         "type": "wind",
         "show": false
     },
     {
-        "id": "030",
+        "id":"30",
+        "pokemon_no": "030",
         "image": "030",
         "type": "wind",
         "show": false
     },
     {
-        "id": "031",
+        "id":"31",
+        "pokemon_no": "031",
         "image": "031",
         "type": "fire",
         "show": false
     },
     {
-        "id": "032",
+        "id":"32",
+        "pokemon_no": "032",
         "image": "032",
         "type": "fire",
         "show": false
     },
     {
-        "id": "033",
+        "id":"33",
+        "pokemon_no": "033",
         "image": "033",
         "type": "fire",
         "show": false
     },
     {
-        "id": "034",
+        "id":"34",
+        "pokemon_no": "034",
         "image": "034",
         "type": "water",
         "show": false
     },
     {
-        "id": "035",
+        "id":"35",
+        "pokemon_no": "035",
         "image": "035",
         "type": "water",
         "show": false
     },
     {
-        "id": "036",
+        "id":"36",
+        "pokemon_no": "036",
         "image": "036",
         "type": "water",
         "show": false
     },
     {
-        "id": "037",
+        "id":"37",
+        "pokemon_no": "037",
         "image": "037",
         "type": "poison",
         "show": false
     },
     {
-        "id": "038",
+        "id":"38",
+        "pokemon_no": "038",
         "image": "038",
         "type": "poison",
         "show": false
     },
     {
-        "id": "039",
+        "id":"39",
+        "pokemon_no": "039",
         "image": "039",
         "type": "poison",
         "show": false
     },
     {
-        "id": "040",
+        "id":"40",
+        "pokemon_no": "040",
         "image": "040",
         "type": "dragon",
         "show": false
     },
     {
-        "id": "041",
+        "id":"41",
+        "pokemon_no": "041",
         "image": "041",
         "type": "dragon",
         "show": false
     },
     {
-        "id": "042",
+        "id":"42",
+        "pokemon_no": "042",
         "image": "042",
         "type": "dragon",
         "show": false
     },
     {
-        "id": "043",
+        "id":"43",
+        "pokemon_no": "043",
         "image": "043",
         "type": "normal",
         "show": false
     },
     {
-        "id": "044",
+        "id":"44",
+        "pokemon_no": "044",
         "image": "044",
         "type": "normal",
         "show": false
     },
     {
-        "id": "045",
+        "id":"45",
+        "pokemon_no": "045",
         "image": "045",
         "type": "normal",
         "show": false
     },
     {
-        "id": "046",
+        "id":"46",
+        "pokemon_no": "046",
         "image": "046",
         "type": "normal",
         "show": false
     },
     {
-        "id": "047",
+        "id":"47",
+        "pokemon_no": "047",
         "image": "047",
         "type": "normal",
         "show": false
     },
     {
-        "id": "048",
+        "id":"48",
+        "pokemon_no": "048",
         "image": "048",
         "type": "normal",
         "show": false
     },
     {
-        "id": "049",
+        "id":"49",
+        "pokemon_no": "049",
         "image": "049",
         "type": "normal",
         "show": false
     },
     {
-        "id": "050",
+        "id":"50",
+        "pokemon_no": "050",
         "image": "050",
         "type": "normal",
         "show": false
