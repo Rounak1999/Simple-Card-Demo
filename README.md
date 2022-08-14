@@ -37,3 +37,16 @@ It is used for Backend api integration
 11. After remove the cursor from the card the card gets it into their original size.
 
 Sample Output given below :
+
+1. Animation on initializing
+https://user-images.githubusercontent.com/61222797/184550553-aa023b95-4228-4e31-8246-85f9d886e2c1.mp4
+
+
+2.Delete Button
+https://user-images.githubusercontent.com/61222797/184550596-05082558-d19b-41c9-819a-5a02ad23addf.mp4
+
+
+3.Add Button
+https://user-images.githubusercontent.com/61222797/184550619-c0b4f92d-1bca-488b-baf0-341483af73cb.mp4
+
+
