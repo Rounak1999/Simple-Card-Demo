@@ -5,5 +5,35 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+### `mockapi.io` 
 
+It is used for Backend api integration
 
+### `Project Description`
+
+1. All Data coming from get api. (with dummy data)
+
+2. In a card, there are three variables coming from api
+  - pokemon name
+  - pokemon type
+  - pokemon image number
+
+3. All the datas are shown in the card.
+
+4. On the top left corner of card the delete icon are shown.
+
+5. The delete button, Deletes the card and refresh data.
+
+6. On the top right corner of site i will give a " Add Pokemon " button.
+
+7. On clicking in Add button, the new card gets appear with the help of api.
+
+8. All the pokemons are given a specific pokemon type. So all cards colour are shown according to their pokemon type.
+
+9. Animations are coming at the time of initialization and when site reloads.
+
+10. When hovering on the card the card gets bigger and on the image of pokemon also gets bigger.
+
+11. After remove the cursor from the card the card gets it into their original size.
+
+Sample Output given below :
